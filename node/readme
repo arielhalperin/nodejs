@@ -1,0 +1,5 @@
+npm istall
+npm run build
+"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath C:\Projects\data\db
+"C:\Program Files\MongoDB\Server\3.4\bin\mongo.exe"
+npm start
