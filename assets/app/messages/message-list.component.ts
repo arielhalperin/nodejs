@@ -1,9 +1,10 @@
 /**
  * Created by arielh on 1/1/2017.
  */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {Message} from "./message.model";
+import {MessageService} from "./message.service";
 
 @Component({
     selector: 'app-message-list',
@@ -16,10 +17,13 @@ import {Message} from "./message.model";
         </div>
     `
 })
-export class MessageListComponent{
-    messages: Message[] = [
-        new Message('A meesage', 'Ariel'),
-        new Message('different message', 'Ariel the second'),
-        new Message('third message', 'Ariel')
-    ];
+export class MessageListComponent implements OnInit{
+
+    messages: Message[];
+
+    constructor(private messageService: MessageService){}
+
+    ngOnInit() {
+        this.messages = this.messageService.getMessages();
+    }
 }
