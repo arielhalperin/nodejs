@@ -40,4 +40,8 @@ export class MessageComponent{
     onEdit(){
         this.messageService.editMessage(this.message);
     }
+
+    belongToUser(){
+        return localStorage.getItem('userId') == this.message.userId;
+    }
 }
